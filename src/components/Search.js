@@ -1,10 +1,16 @@
 import React from "react";
 
-function Search() {
-  function handleSubmit(e) {
-    e.preventDefault();
-    console.log("submitted");
-  }
+function Search( { searchValue, handleChange, handleSubmit }) {
+  // const [searchValue, setSearchValue] = useState('')
+
+
+  // function handleChange(e) {
+  //   setSearchValue(searchValue => e.target.value)
+  // }
+
+  // const displayedListings = allListings.filter(listing => listing.description.toLowerCase().includes(searchValue.toLowerCase()))
+
+ 
 
   return (
     <form className="searchbar" onSubmit={handleSubmit}>
@@ -12,8 +18,8 @@ function Search() {
         type="text"
         id="search"
         placeholder="search free stuff"
-        value={""}
-        onChange={(e) => console.log(e.target.value)}
+        onChange={handleChange}
+        value={searchValue}
       />
       <button type="submit">🔍</button>
     </form>
